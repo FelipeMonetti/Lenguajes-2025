@@ -15,14 +15,14 @@ puntos_pc = 0
 rondas_que_cuentan = 0
 rondas_totales = 0
 
-while rondas_totales not in opciones_rondas:                                                           # verifica que el usuario ingrese lo que se pide
+while rondas_totales not in opciones_rondas:                                      # verifica que el usuario ingrese lo que se pide
     rondas_totales = int(input("Elegí si se va a jugar al mejor de 3, 5 o 7: "))
     if rondas_totales not in opciones_rondas:
         print("Opción inválida. Probá otra vez.")
 
 limite = (rondas_totales // 2) + 1
 
-while rondas_que_cuentan < rondas_totales:
+while rondas_que_cuentan < rondas_totales:                              # no es '<=' porque el break se ejecuta antes de llegar a que las rondas sean iguales
     print(f"\nRonda {ronda}")
 
     jugada_usuario = input("Tu jugada: ").strip().lower()
@@ -30,7 +30,6 @@ while rondas_que_cuentan < rondas_totales:
     if jugada_usuario not in opciones:
         print("Entrada no válida. Debe ser piedra, papel o tijera. Se debe repetir la ronda")
         continue # se debe repetir la ronda porque la entrada es inválida
-
     jugada_pc = random.choice(opciones)
     print(f"La computadora eligió: {jugada_pc}")
 
@@ -52,16 +51,9 @@ while rondas_que_cuentan < rondas_totales:
     ronda += 1
     rondas_que_cuentan += 1
 
-    # Chequeos de corte
+    # Chequeo de corte
 
     if (puntos_usuario == limite) or (puntos_pc == limite):
-        break
-
-    if rondas_que_cuentan >= rondas_totales:
-        break
-
-    restan = rondas_totales - rondas_que_cuentan
-    if puntos_usuario > puntos_pc + restan or puntos_pc > puntos_usuario + restan:      # corta el juego antes si ya esta definido, asi no se juegan rondas innecesarias
         break
 
 print("\n=== Resultado final ===")
@@ -72,6 +64,3 @@ if puntos_usuario > puntos_pc:
 
 elif puntos_usuario < puntos_pc:
     print("La computadora ganó el juego.")
-
-else:
-    print("Empate total.")
