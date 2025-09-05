@@ -55,6 +55,8 @@ while rondas_que_cuentan < rondas_totales:                              # no es 
 
     if (puntos_usuario == limite) or (puntos_pc == limite):
         break
+    print("\n=== Resultado parcial ===")
+    print(f"Tus puntos: {puntos_usuario} | Puntos de la PC: {puntos_pc}")
 
 print("\n=== Resultado final ===")
 print(f"Tus puntos: {puntos_usuario} | Puntos de la PC: {puntos_pc}")
