@@ -13,13 +13,12 @@ while nota != -1:
     totalNotas += 1
     nota = int(input("Ingresa una nota: "))
 
-print(notas)
+print("Lista con todas las notas → ",notas)
 resultadoPromedio = promedio / totalNotas
-print("Total promedio: ", resultadoPromedio)
+print("Promedio de las notas: ", resultadoPromedio)
 
 debajo = 0
 for n in notas:
-    print(n)
     if n < resultadoPromedio:
         debajo += 1
 
@@ -29,8 +28,8 @@ print("\n-------------------------------\n")
 
 palabras = ["mate", "botella", "termo", "llave", "casa", "rinoceronte"]
 print(f"Lista de palabras original: {palabras}\n")
-palabras5 = []
 
+palabras5 = []
 for p in palabras:
     if len(p) > 5:
         palabras5.append(p)
