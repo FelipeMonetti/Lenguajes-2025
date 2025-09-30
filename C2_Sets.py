@@ -24,7 +24,7 @@ def eliminar_duplicados(lista3):
     resultado = []
     for num in lista3:
         if num not in vistos:                   # si el elemento no fue visto, es decir no esta duplicado, lo guardo
-            resultado.append(num)
+            resultado.append(num)                   # se mantiene el orden en que se ingresaron los elementos
             vistos.add(num)
     return resultado
 
